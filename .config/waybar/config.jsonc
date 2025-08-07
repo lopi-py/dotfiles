@@ -1,0 +1,116 @@
+{
+    "spacing": 5,
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": [
+        "custom/power",
+        "cpu",
+        "memory",
+        "disk"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "group/state",
+        "tray",
+        "clock"
+    ],
+    "cpu": {
+        "interval": 5,
+        "format": "<span color='#f1ac6b'></span> {usage}%",
+        "on-click": "foot btop"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "<span color='#89f16b'></span> {}%",
+        "on-click": "foot btop"
+    },
+    "disk": {
+        "interval": 5,
+        "format": "<span color='#ffc466'></span> {percentage_used}%",
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    },
+    "clock": {
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip-format": "{calendar}"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": "<span color='#f1ac6b'>{icon}</span> {bandwidthDownBits}",
+        "format-ethernet": "",
+        "format-linked": "󰤪",
+        "format-disconnected": "󰤭",
+        "format-disabled": "󰤭",
+        "tooltip-format": "{essid} {signalStrength}%",
+        "tooltip-format-ethernet": "{essid}",
+        "tooltip-format-linked": "{essid}...",
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disabled": "Disabled",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "<span color='#6b9af1'>󰕾</span> {volume}%",
+        "format-muted": "󰖁 muted",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "backlight": {
+        "format": "<span color='#fff587'>󰃠</span> {}%",
+        "tooltip-format": "Brightness"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 5,
+        "format": "<span color='#6bf1a5'>{icon}</span> {capacity}%",
+        "format-warning": "{icon} {capacity}%",
+        "format-critical": "{icon} {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "group/state": {
+        "orientation": "inherit",
+        "modules": [
+            "network",
+            "pulseaudio",
+            "backlight",
+            "battery"
+        ]
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout -b 5"
+    }
+}

@@ -1,0 +1,139 @@
+@import "colors.css";
+
+* {
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-size: 13px;
+}
+
+window#waybar {
+    color: @on_surface;
+    background: alpha(@surface, 0.94);
+    border-radius: 12px;
+}
+
+tooltip {
+    background: @surface;
+    border-radius: 8px;
+    border: solid 1px @surface_container;
+}
+
+tooltip label {
+    all: unset;
+    padding: 1px;
+    color: @on_surface;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 5px;
+}
+
+.modules-center {
+    padding: 5px 0;
+}
+
+#cpu,
+#memory,
+#disk,
+#state,
+#tray,
+#clock {
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: @surface_container;
+}
+
+#state label {
+    padding: 0 5px;
+}
+
+#state widget:first-child label {
+    padding-left: 0;
+}
+
+#state widget:last-child label {
+    padding-right: 0;
+}
+
+#workspaces button {
+    all: unset;
+    padding: 0 10px;
+    margin: 0 2.5px;
+    color: alpha(@on_surface, 0.5);
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:first-child {
+    margin-left: 0;
+}
+
+#workspaces button:last-child {
+    margin-right: 0;
+}
+
+#workspaces button:hover {
+    background: @surface_container;
+}
+
+#workspaces button.active {
+    padding: 0 15px;
+    color: @on_primary;
+    background: @primary;
+}
+
+#workspaces button.urgent {
+    color: @on_error;
+    background: @error;
+}
+
+#custom-power {
+    color: lightcoral;
+    padding: 4px;
+}
+
+#network {
+    color: #f8dd9c;
+}
+
+#network.linked {
+    color: sandybrown;
+}
+
+#network.disconnected {
+    color: lightcoral;
+}
+
+#network.disabled {
+    color: alpha(@on_surface, 0.5);
+}
+
+#pulseaudio.muted {
+    color: alpha(@on_surface, 0.5);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: lightgreen;
+}
+
+#battery.warning:not(.charging) {
+    color: sandybrown;
+}
+
+@keyframes blink {
+    to {
+        color: lightgray;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: lightcoral;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
