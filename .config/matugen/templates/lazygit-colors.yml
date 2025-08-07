@@ -1,0 +1,10 @@
+gui:
+  border: single
+
+  theme:
+    activeBorderColor:
+      - "{{colors.primary.default.hex}}"
+    inactiveBorderColor:
+      - "{{colors.surface_variant.default.hex}}"
+    selectedLineBgColor:
+      - "{{colors.surface_variant.default.hex}}"
