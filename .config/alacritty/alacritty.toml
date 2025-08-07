@@ -1,0 +1,10 @@
+[general]
+import = ["colors.toml"]
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 12
+
+[window]
+dynamic_padding = true
+opacity = 0.94
