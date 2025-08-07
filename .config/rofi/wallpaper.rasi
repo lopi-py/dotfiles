@@ -1,0 +1,15 @@
+@import "launcher"
+
+element {
+    orientation: vertical;
+}
+
+element-icon {
+    padding: 8px;
+    size: 128px;
+}
+
+listview {
+    columns: 4;
+    lines: 2;
+}

@@ -1,0 +1,61 @@
+@import "colors"
+
+configuration {
+    font: "JetBrainsMono NF 11";
+    show-icons: true;
+    terminal: "alacritty";
+	display-drun: ">";
+}
+
+* {
+    text-color: @on-surface;
+    background-color: transparent;
+}
+
+window {
+    width: 600px;
+    transparency: 0.5;
+    background-color: @surface;
+    border-radius: 12px;
+    border: 1px;
+    border-color: @surface-container;
+}
+
+inputbar {
+    spacing: 8px;
+    padding: 8px 12px;
+    margin: 12px;
+    background-color: @surface-container;
+    border-radius: 8px;
+}
+
+prompt {
+    text-color: @primary;
+}
+
+listview {
+    lines: 8;
+    columns: 2;
+    padding: 0 12px 12px 12px;
+}
+
+element {
+    padding: 8px 12px;
+    spacing: 8px;
+    border-radius: 8px;
+}
+
+element-icon {
+    size: 20px;
+}
+
+element selected.normal, element-text selected.normal {
+    text-color: @on-primary;
+    background-color: @primary;
+}
+
+textbox {
+    padding: 12px;
+    text-color: @on-error;
+    background-color: @error;
+}
