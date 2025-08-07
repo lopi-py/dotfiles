@@ -19,17 +19,15 @@
     ],
     "cpu": {
         "interval": 5,
-        "format": "<span color='#f1ac6b'></span> {usage}%",
-        "on-click": "foot btop"
+        "format": "<span color='#f1ac6b'></span> {usage}%"
     },
     "memory": {
         "interval": 5,
-        "format": "<span color='#89f16b'></span> {}%",
-        "on-click": "foot btop"
+        "format": "<span color='#89f16b'></span> {}%"
     },
     "disk": {
         "interval": 5,
-        "format": "<span color='#ffc466'></span> {percentage_used}%",
+        "format": "<span color='#ffc466'></span> {percentage_used}%"
     },
     "tray": {
         "icon-size": 15,
