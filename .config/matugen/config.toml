@@ -38,3 +38,8 @@ post_hook = "pkill -USR1 cava"
 [templates.lazygit]
 input_path = "templates/lazygit-colors.yml"
 output_path = "~/.config/lazygit/config.yml"
+
+[templates.pywalfox]
+input_path = "templates/pywalfox-colors.json"
+output_path = "~/.cache/wal/colors.json"
+post_hook = "pywalfox update"
