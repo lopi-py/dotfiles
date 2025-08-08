@@ -1,6 +1,4 @@
 gui:
-  border: single
-
   theme:
     activeBorderColor:
       - "{{colors.primary.default.hex}}"
