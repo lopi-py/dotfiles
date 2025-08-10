@@ -1,5 +1,0 @@
-@import "launcher"
-
-element-icon {
-  size: 0%;
-}

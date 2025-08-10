@@ -1,0 +1,40 @@
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+}
+
+window {
+    fullscreen: true;
+    background-color: @surface;
+}
+
+mainbox {
+    margin: 0 20%;
+    children: [ dummy, listview, message, dummy ];
+}
+
+listview {
+    lines: 1;
+    columns: 5;
+    spacing: 24px;
+    padding: 56px 0 0 0;
+}
+
+element-text {
+    font: "JetBrainsMono Nerd Font Propo 64";
+    text-color: @outline-variant;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element selected.normal, element-text selected.normal {
+    text-color: @primary;
+}
+
+textbox {
+    font: "JetBrainsMono Nerd Font 14";
+    text-color: @outline;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}

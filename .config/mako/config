@@ -3,6 +3,7 @@ include=~/.config/mako/colors
 font=JetBrainsMono Nerd Font 10
 padding=12
 margin=8
+outer-margin=9
 border-size=1
 border-radius=8
 
