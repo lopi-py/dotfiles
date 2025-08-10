@@ -9,6 +9,10 @@ input_path = "templates/colors.css"
 output_path = "~/.config/waybar/colors.css"
 post_hook = "pkill -USR2 waybar"
 
+[templates.rofi]
+input_path = "templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+
 [templates.alacritty]
 input_path = "templates/alacritty-colors.toml"
 output_path = "~/.config/alacritty/colors.toml"
@@ -18,24 +22,20 @@ input_path = "templates/mako-colors"
 output_path = "~/.config/mako/colors"
 post_hook = "makoctl reload"
 
-[templates.rofi]
-input_path = "templates/rofi-colors.rasi"
-output_path = "~/.config/rofi/colors.rasi"
+[templates.pywalfox]
+input_path = "templates/pywalfox-colors.json"
+output_path = "~/.cache/wal/colors.json"
+post_hook = "pywalfox update"
 
 [templates.yazi]
 input_path = "templates/yazi-colors.toml"
 output_path = "~/.config/yazi/theme.toml"
 
-[templates.cava]
-input_path = "templates/cava-colors.ini"
-output_path = "~/.config/cava/config"
-post_hook = "pkill -USR1 cava"
-
 [templates.lazygit]
 input_path = "templates/lazygit-colors.yml"
 output_path = "~/.config/lazygit/config.yml"
 
-[templates.pywalfox]
-input_path = "templates/pywalfox-colors.json"
-output_path = "~/.cache/wal/colors.json"
-post_hook = "pywalfox update"
+[templates.cava]
+input_path = "templates/cava-colors.ini"
+output_path = "~/.config/cava/config"
+post_hook = "pkill -USR1 cava"
