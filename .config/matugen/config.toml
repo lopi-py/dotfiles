@@ -17,6 +17,11 @@ output_path = "~/.config/rofi/colors.rasi"
 input_path = "templates/alacritty-colors.toml"
 output_path = "~/.config/alacritty/colors.toml"
 
+[templates.tmux]
+input_path = "templates/tmux-colors.conf"
+output_path = "~/.tmux/colors.conf"
+post_hook = "tmux source-file ~/.tmux/colors.conf"
+
 [templates.mako]
 input_path = "templates/mako-colors"
 output_path = "~/.config/mako/colors"

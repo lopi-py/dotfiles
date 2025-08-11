@@ -7,4 +7,5 @@ size = 12
 
 [window]
 dynamic_padding = true
+padding = { x = 5, y = 5  }
 opacity = 0.94

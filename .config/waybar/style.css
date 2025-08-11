@@ -77,6 +77,10 @@ tooltip label {
     background: @surface_container;
 }
 
+#workspaces button.empty {
+    color: @outline_variant;
+}
+
 #workspaces button.active {
     padding: 0 15px;
     color: @on_primary;
