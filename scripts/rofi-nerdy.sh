@@ -1,0 +1,4 @@
+theme="launcher"
+
+rofi -modi nerdy -show nerdy -theme "$theme" \
+    -kb-accept-alt "Return" -kb-accept-entry "Shift+Return"
