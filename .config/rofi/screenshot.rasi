@@ -5,16 +5,16 @@
 }
 
 window {
-    width: 145px;
+    width: 140px;
     location: north;
-    margin: 17px 0 0 0;
+    y-offset: 17px;
+}
+
+mainbox {
     background-color: @surface;
     border: 1px;
     border-color: @surface-container;
     border-radius: 12px;
-}
-
-mainbox {
     children: [ listview ];
 }
 

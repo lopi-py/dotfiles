@@ -8,6 +8,11 @@
 
 window {
     width: 600px;
+}
+
+mainbox {
+    spacing: 12px;
+    padding: 12px;
     background-color: @surface;
     border: 1px;
     border-color: @surface-container;
@@ -17,7 +22,6 @@ window {
 inputbar {
     spacing: 8px;
     padding: 8px 12px;
-    margin: 12px 12px 0 12px;
     background-color: @surface-container;
     border-radius: 8px;
     children: [ prompt, entry ];
@@ -27,16 +31,19 @@ prompt {
     text-color: @primary;
 }
 
+message {
+    padding: 0 12px;
+    text-color: @outline;
+}
+
 textbox {
-    padding: 12px;
-    text-color: @on-error;
-    background-color: @error;
+    text-color: inherit;
+    vertical-align: 0.5;
 }
 
 listview {
     lines: 8;
     columns: 2;
-    padding: 12px;
 }
 
 element {
@@ -52,4 +59,13 @@ element-icon {
 element selected.normal, element-text selected.normal {
     text-color: @on-primary;
     background-color: @primary;
+}
+
+error-message {
+    padding: 12px;
+    text-color: @on-error;
+    background-color: @error;
+    border: 1px;
+    border-color: @on-error;
+    border-radius: 12px;
 }
