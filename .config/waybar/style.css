@@ -59,7 +59,7 @@ tooltip label {
     all: unset;
     padding: 0 10px;
     margin: 0 2px;
-    color: @outline;
+    color: alpha(@outline, 0.85);
     background: transparent;
     border-radius: 8px;
     transition: all 0.2s ease-in-out;
