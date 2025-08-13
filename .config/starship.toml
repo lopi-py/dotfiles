@@ -10,5 +10,8 @@ $python\
 $character
 """
 
+[directory]
+read_only = " "
+
 [python]
 format = "[(\\($virtualenv\\) )]($style)"
