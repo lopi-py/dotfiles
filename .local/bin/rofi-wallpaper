@@ -1,0 +1,79 @@
+#!/bin/bash
+theme="wallpaper"
+wallpapers="$(xdg-user-dir PICTURES)/wallpapers"
+
+list_rows=3
+list_cols=3
+list_padding=5
+element_spacing=5
+element_border=2
+element_width=256
+
+get_wallpapers() {
+    if [[ ! -d "$wallpapers" ]]; then
+        echo "error: directory '$wallpapers' does not exist" >&2
+        exit 1
+    fi
+
+    find "$wallpapers" -maxdepth 1 -type f -iregex '.*\.\(jpg\|jpeg\|png\|gif\)$' | while read -r img; do
+        name=$(basename "$img")
+        echo -en "$name\0icon\x1f$img\n"
+    done
+}
+
+generate_theme() {
+    cat <<EOF
+window {
+    width: $((element_width * list_cols + (element_spacing - element_border) * (list_cols - 1) + element_border * list_cols * 2 + list_padding * 2 + 2))px;
+    padding: ${list_padding}px;
+}
+
+listview {
+    spacing: $((element_spacing - element_border))px;
+    lines: ${list_rows};
+    columns: ${list_cols};
+    fixed-columns: true;
+}
+
+inputbar {
+    padding: 0 $((element_border / 2))px;
+}
+
+current-entry {
+    expand: false;
+    padding: 0 $((element_border / 2))px;
+    children: [ textbox-current-entry ];
+}
+
+textbox-current-entry {
+    text-color: inherit;
+}
+
+element {
+    padding: ${element_border}px;
+    orientation: vertical;
+    children: [ element-thumbnail, element-text ];
+}
+
+element-thumbnail {
+    cursor: inherit;
+    expand: false;
+    padding: -$((element_width * 23 / 100))px; // magic number
+    children: [ element-icon ];
+}
+
+element-icon {
+    size: ${element_width}px;
+}
+EOF
+}
+
+rofi_cmd() {
+    rofi -dmenu -p "wallpaper" -theme "$theme" -theme-str "$(generate_theme)"
+}
+
+wallpaper="$(get_wallpapers | rofi_cmd)"
+[[ -z "$wallpaper" ]] && exit
+
+echo "$wallpapers/$wallpaper"
+~/.local/bin/set-wallpaper "$wallpapers/$wallpaper"

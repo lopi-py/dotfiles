@@ -1,0 +1,34 @@
+@import "colors.rasi"
+
+* {
+    font: "JetBrainsMono Nerd Font 12";
+    text-color: @outline;
+    background-color: transparent;
+}
+
+window {
+    background-color: @surface;
+    border: 1px;
+    border-color: @surface-container;
+    border-radius: 8px;
+}
+
+mainbox {
+    children: [ listview, current-entry ];
+}
+
+element {
+    border-radius: 6px;
+}
+
+element-thumbnail {
+    border-radius: 5px;
+}
+
+element-text {
+    enabled: false;
+}
+
+element selected {
+    background-color: @primary;
+}
