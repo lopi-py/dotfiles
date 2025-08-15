@@ -1,3 +1,4 @@
+#!/bin/bash
 width=$(hyprctl -j monitors | jq -r '.[0].width')
 height=$(hyprctl -j monitors | jq -r '.[0].height')
 x=$(hyprctl -j cursorpos | jq -r '.x')

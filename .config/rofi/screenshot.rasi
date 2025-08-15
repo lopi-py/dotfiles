@@ -37,7 +37,7 @@ element-text {
     horizontal-align: 0.5;
 }
 
-element selected.normal, element-text selected.normal {
+element selected, element-text selected {
     text-color: @on-primary;
     background-color: @primary;
 }

@@ -1,3 +1,4 @@
+#!/bin/bash
 theme="screenshot"
 output="$(xdg-user-dir PICTURES)/screenshots"
 
@@ -14,8 +15,8 @@ if [[ "$1" == "--instant" ]]; then
     exit
 fi
 
-menu=$(echo -e "$screen\n$region\n$window" | rofi_cmd)
-case $menu in
+option=$(echo -e "$screen\n$region\n$window" | rofi_cmd)
+case $option in
     $screen)
         sleep 0.1
         hyprshot -o "$output" -m output -m active

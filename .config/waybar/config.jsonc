@@ -109,6 +109,6 @@
     "custom/power": {
         "format": "",
         "tooltip": false,
-        "on-click": "~/scripts/rofi-powermenu.sh"
+        "on-click": "~/.local/bin/rofi-powermenu"
     }
 }

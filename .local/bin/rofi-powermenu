@@ -1,3 +1,4 @@
+#!/bin/bash
 theme="powermenu"
 uptime="$(uptime -p | sed -e 's/up //g')"
 
@@ -8,11 +9,11 @@ reboot="󰜉"
 logout="󰈆"
 
 rofi_cmd() {
-    rofi -dmenu -mesg "Uptime: $uptime" -theme "$theme" -selected-row 2
+    rofi -dmenu -mesg "Uptime: $uptime" -theme "$theme" -select $shutdown
 }
 
-menu=$(echo -e "$lock\n$suspend\n$shutdown\n$reboot\n$logout" | rofi_cmd)
-case $menu in
+option=$(echo -e "$lock\n$suspend\n$shutdown\n$reboot\n$logout" | rofi_cmd)
+case $option in
     $lock)
         sleep 0.1
         loginctl lock-session
