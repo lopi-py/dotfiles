@@ -22,6 +22,14 @@ input_path = "templates/tmux-colors.conf"
 output_path = "~/.tmux/colors.conf"
 post_hook = "tmux source-file ~/.tmux/colors.conf"
 
+[templates.gtk3]
+input_path = "templates/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
 [templates.mako]
 input_path = "templates/mako-colors"
 output_path = "~/.config/mako/colors"
