@@ -6,6 +6,7 @@ margin=8
 outer-margin=9
 border-size=1
 border-radius=8
+max-icon-size=56
 
 default-timeout=5000
 
