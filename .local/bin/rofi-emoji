@@ -1,4 +1,4 @@
 #!/bin/bash
 theme="launcher"
 
-rofi -modi emoji -show emoji -theme "$theme"
+rofi -modi emoji -show emoji -theme "$theme" -emoji-format "{emoji} {name}"
