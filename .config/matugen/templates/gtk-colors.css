@@ -1,5 +1,5 @@
-@define-color destructive_bg_color {{colors.error.default.hex}}
-@define-color destructive_fg_color {{colors.on_error.default.hex}}
+@define-color destructive_bg_color {{colors.error.default.hex}};
+@define-color destructive_fg_color {{colors.on_error.default.hex}};
 @define-color success_bg_color {{colors.primary.default.hex}};
 @define-color success_fg_color {{colors.on_primary.default.hex}};
 @define-color warning_bg_color {{colors.tertiary.default.hex}};
@@ -32,7 +32,6 @@
 @define-color popover_bg_color {{colors.outline_variant.default.hex}};
 @define-color popover_fg_color {{colors.on_surface.default.hex}};
 @define-color popover_shade_color {{colors.error.default.hex}};
-@define-color shade_color {{colors.surface_container.default.hex}};
 
 :root {
   --accent-bg-color: {{colors.primary.default.hex}};
