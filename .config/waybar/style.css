@@ -32,10 +32,9 @@ tooltip label {
     padding: 6px 0;
 }
 
-#cpu,
-#memory,
-#disk,
-#state,
+#custom-powermenu,
+#system,
+#status,
 #tray,
 #clock {
     padding: 4px 8px;
@@ -43,15 +42,18 @@ tooltip label {
     background: @surface_container;
 }
 
-#state label {
+#system label,
+#status label {
     padding: 0 5px;
 }
 
-#state widget:first-child label {
+#system widget:first-child label,
+#status widget:first-child label {
     padding-left: 0;
 }
 
-#state widget:last-child label {
+#system widget:last-child label,
+#status widget:last-child label {
     padding-right: 0;
 }
 
@@ -59,7 +61,7 @@ tooltip label {
     all: unset;
     padding: 0 10px;
     margin: 0 2px;
-    color: alpha(@outline, 0.85);
+    color: alpha(@outline, 0.9);
     background: transparent;
     border-radius: 8px;
     transition: all 0.2s ease-in-out;
@@ -92,9 +94,9 @@ tooltip label {
     background: @error;
 }
 
-#custom-power {
-    color: lightcoral;
-    padding: 0 8px;
+#custom-powermenu {
+    color: indianred;
+    background: alpha(indianred, 0.075);
 }
 
 #network {
@@ -106,11 +108,11 @@ tooltip label {
 }
 
 #network.disconnected {
-    color: lightcoral;
+    color: indianred;
 }
 
 #network.disabled,
-#pulseaudio.muted {
+#wireplumber.muted {
     color: @outline;
 }
 
@@ -130,7 +132,7 @@ tooltip label {
 }
 
 #battery.critical:not(.charging) {
-    color: lightcoral;
+    color: indianred;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);

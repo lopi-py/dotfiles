@@ -4,16 +4,14 @@
     "margin-left": 8,
     "margin-right": 8,
     "modules-left": [
-        "custom/power",
-        "cpu",
-        "memory",
-        "disk"
+        "custom/powermenu",
+        "group/system"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "group/state",
+        "group/status",
         "tray",
         "clock"
     ],
@@ -58,14 +56,14 @@
         ],
         "on-click": "nm-connection-editor"
     },
-    "pulseaudio": {
+    "wireplumber": {
         "format": "<span color='#6b9af1'>󰕾</span> {volume}%",
         "format-muted": "󰖁 muted",
         "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "backlight": {
-        "format": "<span color='#fff587'>󰃠</span> {}%",
+        "format": "<span color='#ebdd7a'>󰃠</span> {}%",
         "tooltip-format": "Brightness"
     },
     "battery": {
@@ -97,16 +95,24 @@
             "*": 5
         }
     },
-    "group/state": {
+    "group/system": {
+        "orientation": "inherit",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk"
+        ]
+    },
+    "group/status": {
         "orientation": "inherit",
         "modules": [
             "network",
-            "pulseaudio",
+            "wireplumber",
             "backlight",
             "battery"
         ]
     },
-    "custom/power": {
+    "custom/powermenu": {
         "format": "",
         "tooltip": false,
         "on-click": "~/.local/bin/rofi-powermenu"
