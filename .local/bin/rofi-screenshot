@@ -18,15 +18,16 @@ fi
 pkill -x slurp
 
 option=$(echo -e "$screen\n$region\n$window" | rofi_cmd)
+
+sleep 0.1
 case $option in
     $screen)
-        sleep 0.1
         hyprshot -o "$output" -m output -m active
         ;;
     $region)
-        hyprshot -o "$output" -m region
+        hyprshot -o "$output" -m region -z
         ;;
     $window)
-        hyprshot -o "$output" -m window
+        hyprshot -o "$output" -m window -z
         ;;
 esac
