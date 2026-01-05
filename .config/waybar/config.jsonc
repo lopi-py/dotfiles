@@ -38,7 +38,7 @@
     "network": {
         "interval": 5,
         "format-wifi": "<span color='#f1ac6b'>{icon}</span> {bandwidthDownBits}",
-        "format-ethernet": "",
+        "format-ethernet": "<span color='#f1ac6b'></span> {bandwidthDownBits}",
         "format-linked": "󰤪",
         "format-disconnected": "󰤭",
         "format-disabled": "󰤭",

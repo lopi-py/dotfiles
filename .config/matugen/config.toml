@@ -18,6 +18,10 @@ output_path = "~/.config/rofi/colors.rasi"
 input_path = "templates/alacritty-colors.toml"
 output_path = "~/.config/alacritty/colors.toml"
 
+[templates.foot]
+input_path = "templates/foot-colors.ini"
+output_path = "~/.config/foot/colors.ini"
+
 [templates.tmux]
 input_path = "templates/tmux-colors.conf"
 output_path = "~/.tmux/colors.conf"
