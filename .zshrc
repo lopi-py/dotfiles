@@ -1,5 +1,5 @@
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.rokit/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -28,3 +28,6 @@ bindkey '^[[Z' reverse-menu-complete
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+# NOTE: why isn't this a default in opencode?
+export OPENCODE_ENABLE_EXA="true"
