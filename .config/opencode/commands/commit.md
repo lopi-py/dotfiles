@@ -1,6 +1,7 @@
 ---
 agent: build
 description: Stage changes and create a commit with confirmation
+subtask: true
 ---
 
 Help me create a git commit. Follow these steps:
