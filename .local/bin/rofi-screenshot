@@ -7,7 +7,7 @@ region="󰆞"
 window=""
 
 rofi_cmd() {
-    rofi -dmenu -theme "$theme"
+    rofi -dmenu -theme "$theme" -selected-row 1
 }
 
 if [[ "$1" == "--instant" ]]; then

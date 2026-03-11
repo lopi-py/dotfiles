@@ -1,12 +1,22 @@
 # AGENTS.md
 
+## Priorities
+
+Correctness first, performance second, readability third. Never sacrifice a higher priority for a lower one.
+
 ## Code Style
 
-### No Comments
+- Self-documenting code: descriptive names, obvious structure. If code needs a comment to be understood, refactor it.
+- Only comment to explain necessary workarounds or unavoidable complexity.
+- Simplicity over cleverness. Straightforward solutions always win.
+- Small functions, single responsibility. Extract shared logic into well-named helpers.
+- No dead code, unused imports, or unnecessary abstractions.
+- Choose data structures and algorithms appropriate for the problem.
+- Handle errors explicitly. Never swallow failures.
+- Match existing codebase patterns and conventions.
 
-Code should be self-explanatory. Comments should be avoided as much as possible.
+## Work Ethic
 
-- Write clear, descriptive variable and function names
-- Structure code so its intent is obvious
-- Only add comments if absolutely required (e.g., explaining a non-obvious workaround or complex algorithm that cannot be simplified)
-- If code needs a comment to be understood, refactor it first
+- Never take the lazy route. Always implement the correct, thorough solution even when a shortcut exists.
+- If a task requires multiple steps, do all of them. Do not skip steps, leave placeholders, or defer work that should be done now.
+- When fixing a bug, address the root cause — not just the symptoms. When adding a feature, implement it fully — not a hollow skeleton.

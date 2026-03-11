@@ -11,6 +11,8 @@ PACKAGES=(
     python
     luarocks
 
+    tree
+
     neovim-git
     opencode-bin
 )
@@ -21,7 +23,6 @@ DESKTOP_PACKAGES=(
     hyprlock
     hyprshot
     xdg-desktop-portal-hyprland
-    awww
     mako
     wl-clip-persist
     uwsm
@@ -32,6 +33,8 @@ DESKTOP_PACKAGES=(
     wireplumber
     brightnessctl
     playerctl
+    pavucontrol
+    ttf-jetbrains-mono-nerd
     # matugen
     # yazi
     # cava
@@ -41,6 +44,7 @@ DESKTOP_PACKAGES=(
     alacritty
     foot
 
+    awww
     librewolf-bin
     rofi-nerdy
     # python-pywalfox
@@ -59,6 +63,7 @@ install_yay() {
 install_pkgs() {
     echo -e "\n==> Installing packages..."
     yay -S --needed --noconfirm "${PACKAGES[@]}"
+    yay -S --needed --noconfirm "${DESKTOP_PACKAGES[@]}"
 }
 
 install_dotfiles() {

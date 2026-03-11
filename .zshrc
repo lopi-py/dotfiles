@@ -7,6 +7,9 @@ export MANPAGER="nvim +Man!"
 
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias v="nvim"
+alias cc="claude --dangerously-skip-permissions"
+alias lg="lazygit"
 
 KEYTIMEOUT=1
 
@@ -28,6 +31,3 @@ bindkey '^[[Z' reverse-menu-complete
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-
-# NOTE: why isn't this a default in opencode?
-export OPENCODE_ENABLE_EXA="true"
