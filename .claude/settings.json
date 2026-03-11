@@ -1,0 +1,11 @@
+{
+  "env": {
+    "IS_DEMO": "1",
+    "DISABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/lopy/.claude/statusline.sh"
+  }
+}
