@@ -10,7 +10,15 @@ LINES_REMOVED=$(echo "$input" | jq -r '.cost.total_lines_removed // 0')
 DIR=$(echo "$input" | jq -r '.workspace.current_dir // empty')
 DIR="${DIR:-$PWD}"
 
-fmt_tokens() { [ "$1" -ge 1000 ] 2>/dev/null && printf "%dk" $(($1/1000)) || printf "%d" "$1"; }
+fmt_tokens() {
+  if [ "$1" -ge 1000 ] 2>/dev/null && [ $(($1/1000)) -ge 1000 ] 2>/dev/null; then
+    printf "%dM" $(($1/1000000))
+  elif [ "$1" -ge 1000 ] 2>/dev/null; then
+    printf "%dk" $(($1/1000))
+  else
+    printf "%d" "$1"
+  fi
+}
 
 GIT_DIR="${DIR/#$HOME/\~}"
 if git -C "$DIR" rev-parse --show-toplevel > /dev/null 2>&1; then
@@ -36,6 +44,6 @@ if [ "$PCT" -gt 0 ] || [ -n "$TOKENS_USED" ]; then
 fi
 
 OUT="\033[2m${MODEL}\033[0m"
-[ -n "$CTX" ] && OUT="${OUT} | ${CTX}"
-OUT="${OUT} | ${GIT_DIR}"
+[ -n "$CTX" ] && OUT="${OUT} \033[2m|\033[0m ${CTX}"
+OUT="${OUT} \033[2m|\033[0m ${GIT_DIR}"
 printf '%b\n' "$OUT"
