@@ -2,8 +2,8 @@
 
 ## Code Style
 
-- Self-documenting code: descriptive names, obvious structure. If code needs a comment to be understood, refactor it
-- Only comment to explain necessary workarounds or unavoidable complexity
+- Write self-documenting code: descriptive names and obvious structure. If code needs a comment to be understood, refactor it
+- The only valid reason to write a comment is to explain *why* something non-obvious is done (workarounds, tricky constraints). Never write comments that describe *what* the code does, narrate changes ("added X", "now does Y"), or label sections
 - No dead code, unused imports, or unnecessary abstractions
 - Handle errors explicitly. Never swallow failures
 - Match existing codebase patterns and conventions
