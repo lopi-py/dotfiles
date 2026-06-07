@@ -14,8 +14,7 @@ Goal:
 Rules:
 - Inspect only the context needed to plan safely: relevant files, docs, diffs, tests, or existing patterns.
 - Do not edit files, run broad refactors, or implement until I approve the plan.
-- Ask one clarifying question if missing information would materially change the plan.
-- If the path is clear, do not ask unnecessary questions.
+- Ask one clarifying question only if missing information would materially change the plan.
 - Keep the plan proportional to the task. Trivial changes should have short plans.
 - Prefer existing project patterns over new structure.
 - Mention alternatives only when there is a real trade-off.

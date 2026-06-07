@@ -6,6 +6,7 @@
 - Follow existing codebase patterns, conventions, framework idioms, and local utilities before inventing new structure.
 - Prefer the simplest solution that fully solves the problem. Avoid unnecessary abstractions, state, dependencies, or indirection.
 - Implement features completely, not as hollow scaffolds, placeholders, partial support, or TODOs.
+- For medium or large changes, read enough context, confirm the intended direction, and get explicit approval before editing.
 - Verify changes when possible with focused tests, type checks, linters, or manual checks. Do not claim verification unless the command/check was actually run.
 
 ## Style Rules

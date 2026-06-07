@@ -5,39 +5,33 @@ description: Use before editing when a request is ambiguous, underspecified, or 
 
 # Clarify Before Changing
 
-Use this skill to turn a change request into a small, clear implementation direction before editing. Apply it whenever the request is not purely mechanical.
+Use this skill as a lightweight workflow for turning ambiguous requests into a clear implementation direction.
 
 ## Goal
 
-Reduce wrong assumptions without turning every change into a planning ceremony.
+Reduce wrong assumptions without turning normal implementation work into a planning ceremony.
 
 ## Workflow
 
-1. **Read enough context**
-   - Inspect the relevant files, config, docs, or recent changes.
-   - Do not scan the whole project unless the change needs it.
+1. **Read targeted context**
+   - Inspect only the files, config, docs, or recent changes needed to understand the likely scope.
+   - Do not scan the whole project unless the ambiguity requires it.
 
-2. **Clarify only what matters**
-   - Ask one question at a time when missing information would change the solution.
-   - Prefer concrete options when possible.
-   - Skip questions when the request and local patterns make the answer obvious.
+2. **Identify the decision that matters**
+   - Separate facts found in the codebase from assumptions.
+   - Look for the smallest decision that would materially change the implementation.
+   - If local patterns make the answer obvious, proceed without pausing.
 
-3. **Outline the approach**
-   - For simple changes, give a short plan in 2 to 4 bullets.
-   - For meaningful design choices, present 2 or 3 options with trade-offs and a recommendation.
-   - If the request touches multiple files, behavior, data shape, public APIs, or architecture, outline before editing.
-   - If the user only asked for analysis or a plan, do not edit.
+3. **Ask the smallest useful question**
+   - Ask exactly one clarification question per turn. Do not bundle questions in a list.
+   - Prefer concrete options with a recommendation.
+   - If a safe default is genuinely low-risk, state it briefly and proceed.
 
-4. **Get approval when risk is real**
-   - Ask before implementing if the change affects architecture, user-visible behavior, data shape, public APIs, or multiple subsystems.
-   - For small, low-risk changes, proceed after the brief outline.
-   - Do not turn obvious changes into a long planning exchange.
-
-5. **Keep scope tight**
-   - Solve the requested problem.
-   - Avoid extra abstractions, broad rewrites, or unrelated cleanup.
-   - Document decisions only when the project already has a place for them or the user asks.
+4. **Confirm only enough direction**
+   - For small changes, a short summary of the intended approach is enough.
+   - For requests that affect behavior, data shape, architecture, or multiple areas, confirm the meaningful choice before editing.
+   - If the user asked only for analysis, do not edit.
 
 ## Output Style
 
-Be concise and practical. Focus on intent, constraints, selected approach, and what will be changed. You may ask multiple clarifying questions across the conversation, but ask at most one per message and start with the one that matters most.
+Be concise and practical. Focus on the specific uncertainty, recommended direction, and what would change.
