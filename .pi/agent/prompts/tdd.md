@@ -24,13 +24,12 @@ Rules:
 Workflow:
 1. Inspect relevant code, public interfaces, existing test patterns, and project vocabulary.
 2. State the intended behavior and the first test to add or change.
-3. Ask one clarifying question if the public interface or behavior priority is unclear.
-4. Edit one test only.
-5. Run the focused test and confirm it fails for the expected behavior gap.
-6. Implement the smallest production change to pass that test.
-7. Run the focused test and confirm it passes.
-8. Repeat for the next behavior only after the current slice is green.
-9. Run relevant surrounding tests or checks before finishing.
+3. Edit one test only.
+4. Run the focused test and confirm it fails for the expected behavior gap.
+5. Implement the smallest production change to pass that test.
+6. Run the focused test and confirm it passes.
+7. Repeat for the next behavior only after the current slice is green.
+8. Run relevant surrounding tests or checks before finishing.
 
 Per-cycle checklist:
 - Test describes one behavior.

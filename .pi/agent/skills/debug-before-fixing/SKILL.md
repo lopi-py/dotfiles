@@ -5,7 +5,7 @@ description: Investigate bugs, failing tests, build errors, flaky behavior, regr
 
 # Debug Before Fixing
 
-Use this sikll as an evidence-first debugging workflow for broken behavior.
+Use this skill as an evidence-first debugging workflow for broken behavior. Reproduce or bound the issue before changing code, trace symptoms to the likely root cause using concrete evidence, then fix the confirmed cause rather than masking downstream symptoms.
 
 ## Rule
 

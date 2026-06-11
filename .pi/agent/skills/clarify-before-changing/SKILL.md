@@ -5,11 +5,7 @@ description: Use before editing when a request is ambiguous, underspecified, or 
 
 # Clarify Before Changing
 
-Use this skill as a lightweight workflow for turning ambiguous requests into a clear implementation direction.
-
-## Goal
-
-Reduce wrong assumptions without turning normal implementation work into a planning ceremony.
+Use this skill as a lightweight workflow to reduce wrong assumptions and turn ambiguous requests into a clear implementation direction without turning normal work into a planning ceremony.
 
 ## Workflow
 
@@ -22,8 +18,9 @@ Reduce wrong assumptions without turning normal implementation work into a plann
    - Look for the smallest decision that would materially change the implementation.
    - If local patterns make the answer obvious, proceed without pausing.
 
-3. **Ask the smallest useful question**
-   - Ask exactly one clarification question per turn. Do not bundle questions in a list.
+3. **Ask only useful clarifying questions**
+   - Ask only the questions needed to resolve decisions that would materially change the implementation.
+   - Keep questions concise, decision-oriented, and limited to the current uncertainty.
    - Prefer concrete options with a recommendation.
    - If a safe default is genuinely low-risk, state it briefly and proceed.
 

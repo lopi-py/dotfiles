@@ -1,20 +1,23 @@
 ---
 description: Build a concise engineering plan before implementation
-argument-hint: "<task or focus>"
+argument-hint: "<task>"
 ---
 Plan the requested change before editing code.
 
-Task or focus: $ARGUMENTS
+Task:
+````text
+$ARGUMENTS
+````
 
 Goal:
-- Understand the requested change and relevant project context.
-- Propose the smallest safe approach.
-- Identify risks, assumptions, and a concrete verification path.
+- Understand the requested change and the project context needed to plan safely.
+- Propose the smallest approach that solves the task using existing patterns.
+- Surface assumptions, risks, and focused verification before implementation.
 
 Rules:
 - Inspect only the context needed to plan safely: relevant files, docs, diffs, tests, or existing patterns.
-- Do not edit files, run broad refactors, or implement until I approve the plan.
-- Ask one clarifying question only if missing information would materially change the plan.
+- Do not edit files, run broad refactors, or implement until the plan is approved.
+- Ask clarifying questions only when missing information would materially change the plan. Keep them concise, decision-oriented, and limited to what is needed to plan safely.
 - Keep the plan proportional to the task. Trivial changes should have short plans.
 - Prefer existing project patterns over new structure.
 - Mention alternatives only when there is a real trade-off.
@@ -36,8 +39,8 @@ Report format:
 - Main risks, edge cases, or compatibility concerns.
 - Focused verification to run after implementation.
 
-## Clarifying question
+## Clarifying questions
 
-- Ask one question only if needed. If none, write `None`.
-
-Keep it practical. Avoid ceremony, large design docs, task trackers, and speculative architecture.
+- Ask only the clarifying questions needed to resolve decisions that would materially change the plan.
+- Prefer stating safe assumptions over asking low-impact preference questions.
+- If no clarification is needed, write `None`.
