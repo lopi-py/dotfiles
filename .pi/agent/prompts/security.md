@@ -12,7 +12,6 @@ Goal:
 Scope:
 - Determine the relevant code internally. Use git diffs when available, otherwise review the files changed or discussed in this session.
 - Inspect nearby call sites, trust boundaries, authentication and authorization checks, validation, configuration, data flows, dependencies, generated artifacts, and documentation when needed to validate a finding.
-- Do not report repository discovery steps, whether git was available, or which diff source was used unless it affects the review.
 - If the requested focus narrows the review, honor it while still reporting serious unrelated security issues visible in scope.
 
 Look for concrete security issues, including but not limited to:

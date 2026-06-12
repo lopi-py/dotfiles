@@ -12,7 +12,6 @@ Goal:
 Scope:
 - Determine the relevant code internally. Use git diffs when available, otherwise review the files changed or discussed in this session.
 - Inspect nearby call sites, tests, types, configuration, data shapes, migrations, and documentation when needed to validate a finding.
-- Do not report repository discovery steps, whether git was available, or which diff source was used unless it affects the review.
 - If the requested focus narrows the review, honor it while still reporting serious unrelated issues visible in scope.
 
 Review for concrete issues, including but not limited to:
