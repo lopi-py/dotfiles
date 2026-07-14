@@ -2,31 +2,25 @@
 description: Commit staged changes with a concise message
 argument-hint: "[focus]"
 ---
-Commit the staged changes with a concise, appropriate message.
+Commit only the currently staged changes.
 
-Rules:
-- Inspect git state, the staged diff, and recent commits internally.
-- Commit staged changes only. Never stage files automatically.
-- If nothing is staged, suggest what likely should be staged and do not commit.
-- If related unstaged files make the staged set look incomplete, ask before committing.
-- Match the repository commit style. If unclear, use Conventional Commits, for example `feat: add export option`.
+Focus: $ARGUMENTS
 
-Message:
-- Summarize intent, not every file.
-- Prefer a concise imperative subject.
-- Add a body only for useful context, risk, migration notes, or important behavior changes.
-- Mention verification only when relevant and known.
-- Avoid vague claims, hype, and change narration.
+- Inspect git status, the staged diff, and recent commit style.
+- Never stage files or alter the working tree.
+- If nothing is staged, do not commit; identify the files that likely need staging.
+- If relevant unstaged changes make the staged set plausibly incomplete, ask whether to proceed.
+- Write a concise, imperative subject that summarizes intent instead of listing every file.
+- Match the repository's commit style; if none is clear, use Conventional Commits.
+- Add a body only for important context, risk, migration notes, behavior changes, or useful verification.
 
-After committing, report only:
+After a successful commit, report only:
 
-`<short commit hash>` <commit message>
+`<short commit hash>` <subject>
 
-If relevant files are left uncommitted, add:
+If relevant files remain uncommitted, append:
 
 Left uncommitted:
-- List relevant files intentionally left uncommitted, wrapping each path in backticks.
+- `<path>`
 
-If none are left uncommitted, omit this section entirely.
-
-Extra focus: $ARGUMENTS
+Omit that section when no relevant files remain.

@@ -2,14 +2,15 @@
 
 ## Engineering Rules
 
-- Fix root causes, not symptoms. Do not add sleeps, skips, hardcoded cases, swallowed errors, or test changes to hide implementation bugs.
-- Follow existing codebase patterns, conventions, framework idioms, and local utilities before inventing new structure.
-- Prefer the simplest solution that fully solves the problem. Avoid unnecessary abstractions, state, dependencies, or indirection.
-- For medium or large changes, read enough context, confirm the intended direction, and get explicit approval before editing.
-- Verify changes when possible with focused tests, type checks, linters, or manual checks. Do not claim verification unless the command/check was actually run.
+- Reuse shared knowledge and behavior, but do not abstract incidental similarity.
+- Prefer the simplest design that meets current requirements. Do not add speculative features, flexibility, or abstractions.
+- Keep responsibilities cohesive, interfaces small, dependencies explicit, and module boundaries clear.
+- Prefer composition over inheritance. Use inheritance only for stable, substitutable relationships.
+- Avoid reaching through collaborators or exposing their internals. Add indirection only when a concrete variation or external boundary requires it.
+- Follow established project patterns and dependency direction. Change contracts deliberately and update affected callers, tests, documentation, and migrations.
+- Preserve invariants, updating them deliberately when requirements change. Validate changes with focused checks.
 
 ## Style Rules
 
-- Avoid comments unless they explain non-obvious reasoning, constraints, or workarounds. Prefer clear names and obvious control flow.
-- Write with proper grammar and preserve language-specific characters, including accents and tildes.
-- Never use em dashes in documentation, comments, messages, or user-facing text. Use commas, semicolons, parentheses, or separate sentences instead.
+- Use comments only to explain non-obvious reasoning, constraints, or workarounds.
+- Do not use em dashes; use commas, parentheses, or separate sentences instead.

@@ -1,57 +1,33 @@
 ---
-description: Review relevant code for concrete security risks
+description: Review code for evidence-backed security risks
 argument-hint: "[focus]"
 ---
-Review the relevant code for concrete security risks.
+Review the relevant code for concrete security risks. Do not modify files or implement changes.
 
-Goal:
-- Find concrete security risks that could affect confidentiality, integrity, availability, authorization, or safe operation.
-- Prioritize problems by realistic impact, exploitability, and what should be fixed before merge or commit.
-- Avoid generic checklist items, best-practice advice, and speculative threats not supported by the code.
+Focus: $ARGUMENTS
 
-Scope:
-- Determine the relevant code internally. Use git diffs when available, otherwise review the files changed or discussed in this session.
-- Inspect nearby call sites, trust boundaries, authentication and authorization checks, validation, configuration, data flows, dependencies, generated artifacts, and documentation when needed to validate a finding.
-- If the requested focus narrows the review, honor it while still reporting serious unrelated security issues visible in scope.
+Use the current git diff when available; otherwise use the files changed or discussed in this session. Trace untrusted data, privileged operations, and sensitive data through surrounding controls.
 
-Look for concrete security issues, including but not limited to:
-- Authentication or authorization bypasses.
-- Trust boundary mistakes and missing validation.
-- Injection risks, including command, query, template, path, and configuration injection.
-- Unsafe file/path handling, path traversal, symlink issues, and insecure temporary files.
-- Secret exposure in code, logs, errors, configuration, client responses, or generated artifacts.
-- Unsafe deserialization, parsing, decoding, or format handling.
-- SSRF, open redirects, unsafe URL handling, and overly broad cross-origin behavior.
-- Cryptography misuse, weak randomness, token/session mistakes, and insecure identifiers.
-- Sensitive data leaks through logs, telemetry, cache, persistence, or responses.
-- Race conditions or concurrency bugs with security impact.
-- Memory, lifetime, bounds, ownership, or resource handling issues when relevant to the language or runtime.
-- Dependency or configuration risks when visible from the reviewed code.
-- Any other concrete security risk relevant to the code.
+A finding must have a plausible security impact supported by the code, data flow, or configuration. For each finding:
 
-Finding standards:
-- Report only plausible security impacts supported by the code, data flow, or configuration.
-- Include the file path and line or symbol when possible.
-- Explain the affected asset or trust boundary, why it matters, and the trigger or attack condition.
-- Distinguish confirmed vulnerabilities from risks, assumptions, or hardening opportunities.
-- Group repeated root causes into one finding.
-- Tie mitigations to a concrete attack path or exposure. Exclude praise, clean-code summaries, and repository discovery notes.
+- Cite the file and line or symbol when possible.
+- Identify the affected asset or trust boundary.
+- Explain the prerequisites, exploit path, impact, and evidence.
+- Distinguish a confirmed vulnerability from a risk, assumption, or hardening opportunity.
+- Recommend the smallest concrete mitigation.
 
-Report format:
-- Number findings consecutively across the report.
-- Include file paths and why each issue matters.
-- If a section has no findings, write `None`.
+Group symptoms with the same root cause. Omit praise, generic best practices, unsupported threats, and discovery notes.
+
+Number findings consecutively across all sections. Write `None` when a section has no findings.
 
 ## High risk
 
-- Issues that could plausibly lead to compromise, data exposure, privilege escalation, code execution, or serious authorization bypass.
+Vulnerabilities that plausibly enable system compromise, sensitive data exposure, privilege escalation, code execution, serious authorization bypass, or severe availability loss.
 
 ## Medium risk
 
-- Issues that are security-relevant but require limited conditions, reduce defense in depth, or could become serious with nearby changes.
+Security-relevant issues with meaningful impact but limiting preconditions or exploitability.
 
 ## Low risk / hardening
 
-- Only include actionable hardening suggestions. Avoid generic best practices.
-
-Extra focus: $ARGUMENTS
+Only concrete, actionable improvements tied to an identified exposure.
